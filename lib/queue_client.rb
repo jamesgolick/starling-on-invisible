@@ -1,4 +1,7 @@
+require 'rubygems'
+require 'activesupport'
 require 'rest_client'
+
 
 class QueueClient
   class << self
