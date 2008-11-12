@@ -8,4 +8,11 @@ describe QueueClient do
       QueueClient.put('somekey', 'agreatvalue')
     end
   end
+
+  describe "take" do
+    it "should post to /queue_items/first with the key" do
+      RestClient.should_receive(:post).with("http://localhost:5432/queue_items/first", :key => 'somekey').and_return('whatever').to_yaml
+      QueueClient.take('somekey').should == 'whatever'
+    end
+  end
 end
