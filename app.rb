@@ -1,7 +1,3 @@
-layout { erb(:layout) }
-
-get "/" do
-  render do
-    h1 "This is Invisible"
-  end
+post '/queue_items' do
+  QueueCollection.put(params[:key], params[:value])
 end

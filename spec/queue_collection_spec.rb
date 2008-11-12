@@ -1,5 +1,4 @@
 require File.dirname(__FILE__) + "/spec_helper"
-require "queue_collection"
 
 describe "queue collection" do
   it "should be able to put and get items" do
