@@ -2,6 +2,8 @@
 
 Proof of concept that you can build a queueing server and client RESTfully, leveraging starling's persistent queue code, a lightweight web framework, and thin.
 
+Starling on Invisible is 1/3rd the size of starling.
+
 = Usage
 
 Start it with thin:
