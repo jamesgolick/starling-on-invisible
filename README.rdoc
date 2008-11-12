@@ -1,0 +1,28 @@
+= Starling on Invisible
+
+Proof of concept that you can build a queueing server and client RESTfully, leveraging starling's persistent queue code, a lightweight web framework, and thin.
+
+= Usage
+
+Start it with thin:
+
+  thin -R config/rack.ru -p 5432
+
+Then use it in IRB:
+
+  irb(main):001:0> require 'lib/queue_client'
+  => true
+  irb(main):006:0> QueueClient.put 'mykey', 'value'
+  => ""
+  irb(main):006:0> QueueClient.take 'mykey'
+  => "value"
+  irb(main):007:0> QueueClient.take 'mykey'
+  => nil
+
+= Warning
+
+This is a proof of concept. Don't use it.
+
+= Credits
+
+Created by James Golick
